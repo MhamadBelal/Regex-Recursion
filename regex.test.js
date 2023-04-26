@@ -7,7 +7,7 @@ characters (no numbers and symbols) and it should end with capital A else return
 
 function capitalA(s) {
     // Add your logic.
-    let regex = /^[A-Za-z]+A$/;
+    let regex = /^[A-Za-z ]+A$/;
     return regex.test(s);
 }
 
@@ -30,8 +30,13 @@ function imagesSearcher(text) {
     let arr = [];
     // Add your logic.
     let regex = /(\S+\.(jpg|jpeg|png))/gi;
-    arr = text.match(regex);
-    return arr;
+    arr=text.match(regex);
+    if(arr)
+        return arr;
+    else{
+        arr=[];
+        return arr;
+    }
 }
 
 
